@@ -70,9 +70,7 @@
         }
 
         /* --- AESTHETIC SECTION ACCENTS --- */
-        .section-glow {
-            position: relative;
-        }
+        .section-glow { position: relative; }
         .section-glow::before {
             content: '';
             position: absolute;
@@ -94,7 +92,6 @@
             z-index: 1;
         }
 
-        /* Corner Frame Accents */
         .solution-card::after, .gov-card::after {
             content: '';
             position: absolute;
@@ -108,10 +105,7 @@
             transition: opacity 0.3s ease;
         }
 
-        .solution-card:hover::after, .gov-card:hover::after {
-            opacity: 1;
-        }
-
+        .solution-card:hover::after, .gov-card:hover::after { opacity: 1; }
         .solution-card:hover, .gov-card:hover { 
             border-color: rgba(255, 92, 0, 0.3);
             transform: translateY(-8px);
@@ -222,12 +216,9 @@
                 <div class="tech-item"><i class="fab fa-js text-2xl"></i> <span class="font-bold text-xs tracking-tighter uppercase">JavaScript</span></div>
                 <div class="tech-item"><i class="fa-solid fa-database text-2xl"></i> <span class="font-bold text-xs tracking-tighter uppercase">Pinecone</span></div>
                 <div class="tech-item"><i class="fa-solid fa-link text-2xl"></i> <span class="font-bold text-xs tracking-tighter uppercase">LangChain</span></div>
-                <div class="tech-item"><i class="fa-solid fa-gears text-2xl"></i> <span class="font-bold text-xs tracking-tighter uppercase">n8n / Make</span></div>
             </div>
         </div>
     </div>
-
-    
 
     <!-- PROBLEM SECTION -->
     <section class="py-20 md:py-24 bg-[#050505]">
@@ -252,34 +243,7 @@
         </div>
     </section>
 
-     <!-- SOLUTIONS SECTION (WITH ACCENTS) -->
-    <section id="solutions" class="py-20 md:py-32 bg-black border-b border-white/5 section-glow">
-        <div class="container mx-auto px-6 md:px-16 relative z-10">
-            <div class="mb-16 md:mb-24">
-                <h2 class="text-[10px] tracking-[0.5em] text-orange-500 font-bold uppercase mb-4">Core Capabilities</h2>
-                <h3 class="text-3xl md:text-6xl font-extrabold">Strategic AI Solutions</h3>
-            </div>
-            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <div class="solution-card p-8 md:p-12 rounded-sm flex flex-col">
-                    <i class="fa-solid fa-diagram-project text-3xl mb-8 md:mb-10 text-orange-500"></i>
-                    <h4 class="text-xl md:text-2xl font-bold mb-6">Process Re-engineering</h4>
-                    <p class="text-gray-500 text-sm mb-10 leading-relaxed">Architecting end-to-end autonomous workflows that bridge siloed enterprise software, eliminating manual friction.</p>
-                </div>
-                <div class="solution-card p-8 md:p-12 rounded-sm flex flex-col">
-                    <i class="fa-solid fa-brain text-3xl mb-8 md:mb-10 text-orange-500"></i>
-                    <h4 class="text-xl md:text-2xl font-bold mb-6">Knowledge Retrieval (RAG)</h4>
-                    <p class="text-gray-500 text-sm mb-10 leading-relaxed">Deploying sophisticated AI agents trained on proprietary documentation to provide instant, accurate data retrieval.</p>
-                </div>
-                <div class="solution-card p-8 md:p-12 rounded-sm flex flex-col">
-                    <i class="fa-solid fa-shield-halved text-3xl mb-8 md:mb-10 text-orange-500"></i>
-                    <h4 class="text-xl md:text-2xl font-bold mb-6">Autonomous Logic</h4>
-                    <p class="text-gray-500 text-sm mb-10 leading-relaxed">Building self-correcting agentic loops that handle complex multi-step tasks without constant human oversight.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- GOVERNANCE SECTION (WITH ACCENTS) -->
+    <!-- GOVERNANCE SECTION -->
     <section id="governance" class="py-20 md:py-32 bg-black section-glow">
         <div class="container mx-auto px-6 md:px-16 relative z-10">
             <div class="grid lg:grid-cols-2 gap-12 md:gap-20 items-center">
@@ -336,6 +300,32 @@
         </div>
     </section>
 
+    <!-- SOLUTIONS SECTION -->
+    <section id="solutions" class="py-20 md:py-32 bg-black border-b border-white/5 section-glow">
+        <div class="container mx-auto px-6 md:px-16 relative z-10">
+            <div class="mb-16 md:mb-24">
+                <h2 class="text-[10px] tracking-[0.5em] text-orange-500 font-bold uppercase mb-4">Core Capabilities</h2>
+                <h3 class="text-3xl md:text-6xl font-extrabold">Strategic AI Solutions</h3>
+            </div>
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="solution-card p-8 md:p-12 rounded-sm flex flex-col">
+                    <i class="fa-solid fa-diagram-project text-3xl mb-8 md:mb-10 text-orange-500"></i>
+                    <h4 class="text-xl md:text-2xl font-bold mb-6">Process Re-engineering</h4>
+                    <p class="text-gray-500 text-sm mb-10 leading-relaxed">Architecting end-to-end autonomous workflows that bridge siloed enterprise software, eliminating manual friction.</p>
+                </div>
+                <div class="solution-card p-8 md:p-12 rounded-sm flex flex-col">
+                    <i class="fa-solid fa-brain text-3xl mb-8 md:mb-10 text-orange-500"></i>
+                    <h4 class="text-xl md:text-2xl font-bold mb-6">Knowledge Retrieval (RAG)</h4>
+                    <p class="text-gray-500 text-sm mb-10 leading-relaxed">Deploying sophisticated AI agents trained on proprietary documentation to provide instant, accurate data retrieval.</p>
+                </div>
+                <div class="solution-card p-8 md:p-12 rounded-sm flex flex-col">
+                    <i class="fa-solid fa-shield-halved text-3xl mb-8 md:mb-10 text-orange-500"></i>
+                    <h4 class="text-xl md:text-2xl font-bold mb-6">Autonomous Logic</h4>
+                    <p class="text-gray-500 text-sm mb-10 leading-relaxed">Building self-correcting agentic loops that handle complex multi-step tasks without constant human oversight.</p>
+                </div>
+            </div>
+        </div>
+    </section>
 
     <!-- CASE STUDIES SECTION -->
     <section id="works" class="py-20 md:py-32 bg-black">
@@ -416,15 +406,60 @@
     <script>
         /* --- CASE STUDIES DATA (ALL 9 PROJECTS) --- */
         const projects = [
-            { img: 'projects/project1.png', sector: 'Customer Support', title: 'AI-Powered Urgent Email Dispatcher', desc: '<p><strong>Pain Point:</strong> Customer support teams often miss high-priority emails buried in a cluttered inbox, leading to slow response times.</p><p><strong>Solution:</strong> This Zapier workflow uses AI to categorize incoming emails and instantly routes urgent requests to specific Slack channels.</p>' },
-            { img: 'projects/project2.png', sector: 'Operations', title: 'Autonomous Voice AI Appointment Setter', desc: '<p><strong>Pain Point:</strong> Businesses lose revenue when potential clients fail to book appointments due to the friction of manual scheduling.</p><p><strong>Solution:</strong> This n8n workflow integrates Vapi Voice AI with Google Calendar to autonomously check availability and book meetings.</p>' },
-            { img: 'projects/project3.png', sector: 'Sales / CRM', title: 'Automated Lead Enrichment & CRM Sync', desc: '<p><strong>Pain Point:</strong> Sales teams waste hours manually researching leads and entering data into HubSpot, slowing down the outreach cycle.</p><p><strong>Solution:</strong> This workflow catches new leads via webhook, enriches them using Apollo.io, and creates personalized welcome messages in HubSpot.</p>' },
-            { img: 'projects/project4.png', sector: 'Project Management', title: 'End-to-End Project Lifecycle Automation', desc: '<p><strong>Pain Point:</strong> Managing complex project stages manually leads to missed follow-ups, delayed approvals, and fragmented file storage.</p><p><strong>Solution:</strong> This multi-path Zapier workflow tracks Asana task updates to trigger automated client emails and folder creation in Drive.</p>' },
-            { img: 'projects/project5.png', sector: 'Marketing', title: 'Intelligent Lead Scoring & Response System', desc: '<p><strong>Pain Point:</strong> Marketing teams struggle to distinguish between "hot" and "cold" leads instantly, resulting in generic outreach.</p><p><strong>Solution:</strong> This n8n workflow uses custom JavaScript logic to score incoming leads from Gmail and triggers tailored email responses.</p>' },
-            { img: 'projects/project6.png', sector: 'Data Governance', title: 'Secure Data Validation & Database Sync', desc: '<p><strong>Pain Point:</strong> Invalid email addresses and messy data entry often corrupt company databases, leading to failed marketing campaigns.</p><p><strong>Solution:</strong> This workflow validates incoming data via webhook and performs a "lookup-or-create" logic in Google Sheets.</p>' },
-            { img: 'projects/project7.png', sector: 'Real Estate / Support', title: '24/7 Autonomous Real Estate Concierge', desc: '<p><strong>Pain Point:</strong> Real estate agents often lose high-value leads due to delayed responses to property inquiries on messaging platforms.</p><p><strong>Solution:</strong> This n8n workflow deploys an AI agent that retrieves property data from a knowledge base to provide instant support via Telegram.</p>' },
-            { img: 'projects/project8.png', sector: 'FinTech / Operations', title: 'Automated Financial & Task Reconciliation', desc: '<p><strong>Pain Point:</strong> Manually reconciling completed project tasks with financial records across Asana and Xero creates significant administrative overhead.</p><p><strong>Solution:</strong> This Make.com orchestration automates the synchronization of task completions with ERP systems to ensure 100% data integrity.</p>' },
-            { img: 'projects/project9.png', sector: 'Enterprise / Data', title: 'Intelligent AI Document Processing', desc: '<p><strong>Pain Point:</strong> Teams spend excessive time manually downloading and logging structured data from email attachments into company databases.</p><p><strong>Solution:</strong> This workflow utilizes Google Gemini AI to automatically analyze incoming email attachments and log structured data into Google Sheets.</p>' }
+            { 
+                img: 'projects/project4.png', 
+                sector: 'Customer Support', 
+                title: 'AI-Powered Urgent Email Dispatcher', 
+                desc: '<p><strong>Pain Point:</strong> High-priority client emails are often buried in high-volume inboxes, leading to delayed response times for critical issues.</p><p><strong>Solution:</strong> This Zapier workflow uses AI to analyze email intent and instantly routes urgent requests to dedicated Slack channels for immediate action.</p>' 
+            },
+            { 
+                img: 'projects/project5.png', 
+                sector: 'Operations', 
+                title: 'Autonomous Voice AI Appointment Setter', 
+                desc: '<p><strong>Pain Point:</strong> Businesses lose revenue when potential clients fail to book appointments due to the friction of manual scheduling and back-and-forth coordination.</p><p><strong>Solution:</strong> This n8n workflow integrates Vapi Voice AI with Google Calendar to autonomously check availability and book meetings directly into Airtable.</p>' 
+            },
+            { 
+                img: 'projects/project6.png', 
+                sector: 'Sales / CRM', 
+                title: 'Automated Lead Enrichment & CRM Sync', 
+                desc: '<p><strong>Pain Point:</strong> Sales teams waste significant time manually researching lead details and entering data into HubSpot from various unconnected sources.</p><p><strong>Solution:</strong> This workflow captures leads via webhook, enriches them using Apollo.io data, and automatically synchronizes the information across HubSpot and Google Sheets.</p>' 
+            },
+            { 
+                img: 'projects/project7.png', 
+                sector: 'Project Management', 
+                title: 'End-to-End Project Lifecycle Automation', 
+                desc: '<p><strong>Pain Point:</strong> Manually tracking project milestones across Asana leads to inconsistent client communication and fragmented file management in Google Drive.</p><p><strong>Solution:</strong> This multi-path Zapier workflow monitors Asana task updates to trigger automated client emails, organize Drive folders, and manage project subtasks.</p>' 
+            },
+            { 
+                img: 'projects/project8.png', 
+                sector: 'Marketing', 
+                title: 'Intelligent Lead Scoring & Response System', 
+                desc: '<p><strong>Pain Point:</strong> Marketing teams struggle to prioritize "hot" leads instantly, resulting in generic outreach that fails to engage high-intent prospects.</p><p><strong>Solution:</strong> This n8n workflow uses custom JavaScript to score incoming Gmail leads and triggers tailored email responses based on prospect quality.</p>' 
+            },
+            { 
+                img: 'projects/project9.png', 
+                sector: 'Data Governance', 
+                title: 'Secure Data Validation & Database Sync', 
+                desc: '<p><strong>Pain Point:</strong> Invalid email entries and duplicate records often corrupt company databases, causing failed marketing campaigns and messy reporting.</p><p><strong>Solution:</strong> This workflow validates incoming data in real-time and performs "lookup-or-update" logic in Google Sheets to maintain a clean master record.</p>' 
+            },
+            { 
+                img: 'projects/project1.png', 
+                sector: 'Real Estate / Support', 
+                title: '24/7 Autonomous Real Estate Concierge', 
+                desc: '<p><strong>Pain Point:</strong> Real estate agents lose high-value leads when they cannot provide instant property details to inquiries on messaging platforms outside business hours.</p><p><strong>Solution:</strong> This n8n workflow deploys an AI agent that retrieves property data from a knowledge base to provide instant support via Telegram.</p>' 
+            },
+            { 
+                img: 'projects/project2.png', 
+                sector: 'FinTech / Operations', 
+                title: 'Automated Financial & Task Reconciliation', 
+                desc: '<p><strong>Pain Point:</strong> Manually reconciling completed project tasks with financial records across Asana and Xero creates significant administrative overhead and risk of error.</p><p><strong>Solution:</strong> This Make.com orchestration automates the synchronization of task completions with ERP systems to ensure 100% data integrity.</p>' 
+            },
+            { 
+                img: 'projects/project3.png', 
+                sector: 'Enterprise / Data', 
+                title: 'Intelligent AI Document Processing', 
+                desc: '<p><strong>Pain Point:</strong> Teams spend excessive time manually downloading, reading, and logging structured data from email attachments into company databases.</p><p><strong>Solution:</strong> This workflow utilizes Google Gemini AI to automatically analyze incoming email attachments and log structured data into Google Sheets.</p>' 
+            }
         ];
 
         /* --- RENDER CARDS --- */
