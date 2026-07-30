@@ -73,11 +73,11 @@
           "@type": "Offer",
           "name": "Discovery Sprint",
           "description": "2-week deep-dive audit, 3 prioritized automation opportunities, technical spec + ROI projection, tool/platform recommendations, 1 follow-up strategy call",
-          "price": "2500",
+          "price": "150",
           "priceCurrency": "USD",
           "priceSpecification": {
             "@type": "UnitPriceSpecification",
-            "price": 2500,
+            "price": 150,
             "priceCurrency": "USD"
           }
         },
@@ -85,11 +85,11 @@
           "@type": "Offer",
           "name": "Build Engagement",
           "description": "Scoped build: full workflow end-to-end, RAG/Voice AI/Integration focus, HITL gates + audit logging, staging to production deploy, 30-day warranty + docs + Loom",
-          "price": "8000",
+          "price": "450",
           "priceCurrency": "USD",
           "priceSpecification": {
             "@type": "UnitPriceSpecification",
-            "price": 8000,
+            "price": 450,
             "priceCurrency": "USD"
           }
         },
@@ -101,7 +101,7 @@
           "priceCurrency": "USD",
           "priceSpecification": {
             "@type": "UnitPriceSpecification",
-            "price": 3000,
+            "price": 500,
             "priceCurrency": "USD"
           }
         }
@@ -117,7 +117,7 @@
     </script>
 
     <script src="https://cdn.tailwindcss.com"></script>
-</head>
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
@@ -275,7 +275,7 @@
     }
 }
 
-#chat-widget-header { background-color: #111; padding: 18px 20px; display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid var(--border); }
+#chat-widget-header { background-color: #111; padding: 18px 20px; display: flex; justify-between: align-items: center; border-bottom: 1px solid var(--border); }
 #chat-widget-body { flex: 1; padding: 20px; overflow-y: auto; display: flex; flex-direction: column; gap: 12px; }
 #chat-widget-body p { padding: 12px 16px; border-radius: 12px; font-size: 13px; line-height: 1.6; max-width: 85%; word-wrap: break-word; white-space: pre-wrap; }
 
@@ -816,7 +816,11 @@
                 <div class="bg-white/5 border border-white/10 p-8 md:p-12 rounded-sm">
                     <h4 class="font-bold mb-6 uppercase text-[10px] tracking-widest text-orange-500 text-center">Schedule a Discovery Call</h4>
                     <div class="calendar-container shadow-2xl">
-                        <iframe src="https://calendar.google.com/calendar/appointments/schedules/AcZssZ3oGM-0tbm66H3VkHYtGwnMQLnHj7vcSUxkXsdW0pllSAg2iLXX8HZcGfI9BGmxKeAg4LYvcf8B?gv=true" style="border: 0" width="100%" height="700" frameborder="0"></iframe>
+                        <!-- Google Calendar Appointment Scheduling begin -->
+                        <iframe src="https://calendar.google.com/calendar/appointments/schedules/AcZssZ1JdDSI4U3hhO_KC9n93prgUxfPw46WPaQ5iWsBtYYrBlfdP-lQSMiVT1sa7o7_UnAPi4ijuKTy?gv=true" style="border: 0" width="100%" height="600" frameborder="0"></iframe>
+                        <!-- end Google Calendar Appointment Scheduling -->
+                                            
+
                     </div>
                     <p class="text-center text-gray-500 text-sm mt-4">
   Calendar not loading?
@@ -871,6 +875,21 @@
     </div>
 
     <script>
+        /* --- CALENDLY & MESSAGE EVENT LISTENERS FOR N8N WEBHOOK --- */
+        window.addEventListener('message', function(e) {
+          if (e.data && e.data.event === 'calendly.event_scheduled') {
+            fetch('https://cornball-empathy-bath.ngrok-free.dev/webhook-test/gd-automation-booking', {
+              method: 'POST',
+              headers: { 'Content-Type': 'application/json' },
+              body: JSON.stringify({
+                event: 'calendly.event_scheduled',
+                payload: e.data.payload,
+                timestamp: new Date().toISOString()
+              })
+            }).catch(err => console.error('Error triggering n8n webhook:', err));
+          }
+        });
+
         /* --- CASE STUDIES DATA (ALL 9 PROJECTS) --- */
         const projects = [
             { 
@@ -1030,7 +1049,7 @@
                 });
 
                 typing.remove();
-///
+
                if (response.ok) {
                     const data = await response.json();
                     const reply = data.response || data.output || data.message || data.text || JSON.stringify(data);
@@ -1047,7 +1066,7 @@
                 console.error(err);
             }
         }
-///
+
         chatSend.onclick = sendMessage;
         chatInput.addEventListener("keypress", (e) => { if (e.key === "Enter") sendMessage(); });
 
@@ -1075,6 +1094,8 @@
                 }
             });
         });
+
+      
     </script>
 </body>
 </html>
