@@ -3,14 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gilbert Dulnuan | AI Automation Specialist & N8n Workflow Architect</title>
-    <meta name="description" content="Gilbert Dulnuan — Building autonomous AI workflows, RAG systems, and business process automation with n8n, LangChain, and custom agents. Available for freelance & contract.">
+    <title>Gilbert Dulnuan | GoHighLevel & AI Automation for Small Businesses</title>
+    <meta name="description" content="Gilbert Dulnuan builds GoHighLevel funnels and n8n AI automations that handle lead capture, follow-up and admin for small businesses and agencies.">
 
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://gilbertdulnuan.com/">
-    <meta property="og:title" content="Gilbert Dulnuan | AI Automation Engineer & Workflow Architect">
-    <meta property="og:description" content="Building autonomous AI workflows that run themselves. n8n, LangChain, Voice AI, RAG — production-ready automation systems. 9+ deployments. Freelance & contract.">
+    <meta property="og:title" content="Gilbert Dulnuan | GoHighLevel & AI Automation for Small Businesses">
+    <meta property="og:description" content="Gilbert Dulnuan builds GoHighLevel funnels and n8n AI automations that handle lead capture, follow-up and admin for small businesses and agencies.">
     <meta property="og:image" content="https://gilbertdulnuan.com/og-image.png">
     <meta property="og:image:width" content="1200">
     <meta property="og:image:height" content="630">
@@ -20,9 +20,11 @@
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
     <meta property="twitter:url" content="https://gilbertdulnuan.com/">
-    <meta property="twitter:title" content="Gilbert Dulnuan | AI Automation Engineer & Workflow Architect">
-    <meta property="twitter:description" content="Building autonomous AI workflows that run themselves. n8n, LangChain, Voice AI, RAG — production-ready automation systems. 9+ deployments.">
+    <meta property="twitter:title" content="Gilbert Dulnuan | GoHighLevel & AI Automation for Small Businesses">
+    <meta property="twitter:description" content="Gilbert Dulnuan builds GoHighLevel funnels and n8n AI automations that handle lead capture, follow-up and admin for small businesses and agencies.">
     <meta property="twitter:image" content="https://gilbertdulnuan.com/og-image.png">
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <link rel="preload" as="image" href="Gilbert.webp">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
 
     <!-- JSON-LD Structured Data -->
@@ -31,8 +33,8 @@
       "@context": "https://schema.org",
       "@type": "Person",
       "name": "Gilbert Dulnuan",
-      "jobTitle": "AI Automation Engineer & Workflow Architect",
-      "description": "Building autonomous AI workflows, RAG systems, and enterprise automation with n8n, LangChain, and custom agents.",
+      "jobTitle": "GoHighLevel & AI Automation Specialist",
+      "description": "Gilbert Dulnuan builds GoHighLevel funnels and n8n AI automations that handle lead capture, follow-up and admin for small businesses and agencies.",
       "url": "https://gilbertdulnuan.com/",
       "image": "https://gilbertdulnuan.com/og-image.png",
       "email": "mailto:gdulnuan.systems@gmail.com",
@@ -105,23 +107,16 @@
             "priceCurrency": "USD"
           }
         }
-      ],
-      "aggregateRating": {
-        "@type": "AggregateRating",
-        "ratingValue": "5.0",
-        "reviewCount": "3",
-        "bestRating": "5",
-        "worstRating": "1"
-      }
+      ]
     }
     </script>
 
-    <script src="https://cdn.tailwindcss.com"></script>
+    <script>try{document.documentElement.dataset.theme=localStorage.getItem('theme')||(matchMedia('(prefers-color-scheme: light)').matches?'light':'dark')}catch(e){document.documentElement.dataset.theme='dark'}</script>
+    <link rel="stylesheet" href="tailwind.css">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
-</head>
     <style>
         :root {
             --accent: #ff5c00; 
@@ -242,99 +237,69 @@
         .modal-content { background: var(--charcoal); border: 1px solid var(--border); max-width: 900px; width: 100%; max-height: 90vh; overflow-y: auto; border-radius: 20px; position: relative; animation: zoomIn 0.3s ease-out; }
         @keyframes zoomIn { from { opacity: 0; transform: scale(0.9); } to { opacity: 1; transform: scale(1); } }
 
-       /* --- CHAT WIDGET STYLES --- */
-#chat-widget-button { 
-    position: fixed; bottom: 20px; right: 20px; height: 60px; padding: 0 25px; 
-    background-color: var(--accent); color: white; border-radius: 50px; 
-    display: flex; align-items: center; justify-content: center; gap: 12px; 
-    cursor: pointer; z-index: 1000; border: none; 
-    transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275); 
-}
 
-#chat-widget-container { 
-    position: fixed; bottom: 110px; right: 30px; width: 380px; height: 550px; 
-    max-height: 80vh; background-color: var(--charcoal); border: 1px solid var(--border); 
-    border-radius: 16px; display: none; flex-direction: column; 
-    box-shadow: 0 25px 50px rgba(0,0,0,0.8); z-index: 1001; overflow: hidden; 
-    box-sizing: border-box; /* Ensures padding doesn't add to width */
-}
+        /* --- THEME TOGGLE --- */
+        .theme-toggle { width: 36px; height: 36px; border-radius: 50%; border: 1px solid var(--border); background: rgba(255,255,255,0.05); color: #fff; display: inline-flex; align-items: center; justify-content: center; cursor: pointer; transition: all 0.3s ease; flex-shrink: 0; }
+        .theme-toggle:hover { border-color: var(--accent); color: var(--accent); }
+        .theme-toggle .fa-sun { display: none; }
+        html[data-theme="light"] .theme-toggle .fa-sun { display: inline; }
+        html[data-theme="light"] .theme-toggle .fa-moon { display: none; }
 
-/* MOBILE FIXES */
-@media (max-width: 768px) { 
-    #chat-widget-container { 
-        width: 100% !important; 
-        height: 100% !important; 
-        max-height: 100% !important; 
-        bottom: 0 !important; 
-        right: 0 !important; 
-        border-radius: 0 !important; 
-    }
-    /* Fix for iOS Auto-Zoom */
-    #chat-widget-input {
-        font-size: 16px !important; 
-    }
-}
+        /* --- LIGHT THEME --- */
+        html[data-theme="light"] { --obsidian: #ffffff; --charcoal: #f5f5f5; --border: rgba(0,0,0,0.12); }
+        html[data-theme="light"] body { color: #111; }
+        html[data-theme="light"] .sticky-nav { background-color: rgba(255,255,255,0.85); }
+        html[data-theme="light"] .theme-toggle, html[data-theme="light"] .logo-chip { background: rgba(0,0,0,0.05); color: #111; }
+        html[data-theme="light"] .logo-text { color: #111; }
+        html[data-theme="light"] .accent-btn { background-color: #111; color: #fff; }
+        html[data-theme="light"] .accent-btn:hover { background-color: var(--accent); }
+        html[data-theme="light"] .solution-card, html[data-theme="light"] .gov-card { background: linear-gradient(145deg, #ffffff 0%, #f3f3f3 100%); }
+        html[data-theme="light"] .solution-card:hover, html[data-theme="light"] .gov-card:hover { box-shadow: 0 20px 40px rgba(0,0,0,0.1); }
+        html[data-theme="light"] .tech-marquee-container { background: #fff; }
+        html[data-theme="light"] ::-webkit-scrollbar-track { background: #fff; }
+        html[data-theme="light"] #case-modal { background: rgba(255,255,255,0.95); }
+        html[data-theme="light"] #modal-img { background: #fff; }
+        html[data-theme="light"] .portrait-frame img { border-color: rgba(0,0,0,0.1); box-shadow: 0 20px 50px rgba(0,0,0,0.2), 0 0 60px rgba(255,92,0,0.12); }
+        html[data-theme="light"] .bg-black, html[data-theme="light"] .bg-\[\#050505\] { background-color: #ffffff !important; }
+        html[data-theme="light"] .bg-white\/5 { background-color: rgba(0,0,0,0.04) !important; }
+        html[data-theme="light"] .border-white\/5, html[data-theme="light"] .border-white\/10 { border-color: rgba(0,0,0,0.1) !important; }
+        html[data-theme="light"] .text-white, html[data-theme="light"] .text-gray-200 { color: #111 !important; }
+        html[data-theme="light"] .text-gray-400, html[data-theme="light"] .text-gray-400, html[data-theme="light"] .text-gray-600 { color: #555 !important; }
+        html[data-theme="light"] .accent-btn.text-white, html[data-theme="light"] .accent-btn:hover { color: #fff !important; }
+        html[data-theme="light"] .hover\:text-white:hover { color: #000 !important; }
+        html[data-theme="light"] .bg-orange-500 { color: #000; }
+        html[data-theme="light"] .from-black, html[data-theme="light"] .via-black\/70 { --tw-gradient-from: #fff var(--tw-gradient-from-position); --tw-gradient-to: rgb(255 255 255 / 0) var(--tw-gradient-to-position); --tw-gradient-stops: var(--tw-gradient-from), #fffb var(--tw-gradient-via-position, 50%), var(--tw-gradient-to); }
+        html[data-theme="light"] .to-black { --tw-gradient-to: #fff var(--tw-gradient-to-position); }
+        html[data-theme="light"] .bg-\[radial-gradient\(circle_at_center\,_transparent_0\%\,_\#050505_80\%\)\] { background-image: radial-gradient(circle at center, transparent 0%, #fff 80%) !important; }
+        html[data-theme="light"] section img[alt="Background"] { opacity: 0.12 !important; }
+        html[data-theme="light"] .section-glow::before { background: radial-gradient(circle, rgba(255,92,0,0.08) 0%, transparent 70%); }
 
-#chat-widget-header { background-color: #111; padding: 18px 20px; display: flex; justify-between: align-items: center; border-bottom: 1px solid var(--border); }
-#chat-widget-body { flex: 1; padding: 20px; overflow-y: auto; display: flex; flex-direction: column; gap: 12px; }
-#chat-widget-body p { padding: 12px 16px; border-radius: 12px; font-size: 13px; line-height: 1.6; max-width: 85%; word-wrap: break-word; white-space: pre-wrap; }
+        .modal-close { background: rgba(0,0,0,0.75); color: #fff !important; border: 1px solid rgba(255,255,255,0.4); transition: all 0.2s ease; }
+        .modal-close:hover { background: var(--accent); border-color: var(--accent); }
 
-#chat-widget-footer { 
-    padding: 15px; background-color: #111; 
-    display: flex; align-items: center; /* Keeps items centered vertically */
-    gap: 10px; border-top: 1px solid var(--border); 
-}
-
-#chat-widget-input { 
-    flex: 1; 
-    min-width: 0; /* CRITICAL: Allows input to shrink so button stays on screen */
-    background: #000; border: 1px solid var(--border); 
-    padding: 10px 15px; color: white; font-size: 13px; 
-    border-radius: 6px; outline: none; 
-}
-
-#chat-widget-send { 
-    background-color: var(--accent); color: white; border: none; 
-    padding: 10px 18px; border-radius: 6px; font-weight: 800; 
-    font-size: 10px; text-transform: uppercase; cursor: pointer; 
-    flex-shrink: 0; /* Prevents the button from getting squished */
-}
-        .typing-indicator { align-self: flex-start; background: rgba(255, 255, 255, 0.05); padding: 12px 16px; border-radius: 12px; display: flex; gap: 4px; margin-bottom: 10px; }
-        .typing-indicator span { width: 6px; height: 6px; background: var(--accent); border-radius: 50%; animation: bounce 1.4s infinite ease-in-out both; }
-        @keyframes bounce { 0%, 80%, 100% { transform: scale(0); } 40% { transform: scale(1.0); } }
+        .call-tab { color: #9ca3af; transition: all 0.2s ease; }
+        .call-tab.active, .call-tab:hover { color: #fff; border-color: var(--accent); background: rgba(255,92,0,0.15); }
+        html[data-theme="light"] .call-tab.active, html[data-theme="light"] .call-tab:hover { color: #111; }
 
         .calendar-container { background: #ffffff; border-radius: 2px; overflow: hidden; }
         ::-webkit-scrollbar { width: 6px; }
         ::-webkit-scrollbar-track { background: #000; }
 
-        /* HERO PORTRAIT BORDER LINE STYLES */
-        .portrait-frame {
-            position: relative;
-            display: inline-block;
-            z-index: 1;
-        }
-        /* The White Border Line around the image */
+        /* PORTRAIT: orange corner accents + soft glow */
+        .portrait-frame { position: relative; display: inline-block; z-index: 1; }
         .portrait-frame img {
-            border: 8px solid #ffffff; 
-            box-shadow: 0 20px 50px rgba(0,0,0,0.5);
             display: block;
+            border: 1px solid rgba(255,255,255,0.15);
+            box-shadow: 0 20px 50px rgba(0,0,0,0.5), 0 0 60px rgba(255,92,0,0.15);
         }
-        /* The Orange Accent Line behind the image */
-        .portrait-frame::after {
-            content: '';
-            position: absolute;
-            top: 30px;
-            left: 30px;
-            width: 100%;
-            height: 100%;
-            border: 2px solid var(--accent);
-            z-index: -1;
-            transition: all 0.4s ease;
+        .portrait-frame::before, .portrait-frame::after {
+            content: ''; position: absolute; width: 56px; height: 56px; z-index: 2; pointer-events: none;
+            border: 3px solid var(--accent); transition: all 0.4s ease;
         }
-        .portrait-frame:hover::after {
-            top: 15px;
-            left: 15px;
-        }
+        .portrait-frame::before { top: -14px; left: -14px; border-right: 0; border-bottom: 0; }
+        .portrait-frame::after { bottom: -14px; right: -14px; border-left: 0; border-top: 0; }
+        .portrait-frame:hover::before { top: -6px; left: -6px; }
+        .portrait-frame:hover::after { bottom: -6px; right: -6px; }
 
         .section-glow { position: relative; }
         .solution-card, .gov-card {
@@ -366,12 +331,27 @@
                 <a href="#skills" class="hover:text-white transition">Skills</a>
                 <a href="#services" class="hover:text-white transition">Services</a>
                 <a href="#projects" class="hover:text-white transition">Projects</a>
-                <a href="#reviews" class="hover:text-white transition">Reviews</a>
                 <a href="#pricing" class="hover:text-white transition">Pricing</a>
             </div>
-            <a href="#contact" class="accent-btn px-4 md:px-6 py-2 rounded-sm text-[9px] md:text-[10px] uppercase">
-                Book Discovery Call
-            </a>
+            <div class="flex items-center gap-3">
+                <button id="menu-toggle" class="theme-toggle lg:hidden" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-menu">
+                    <i class="fa-solid fa-bars"></i>
+                </button>
+                <button id="theme-toggle" class="theme-toggle" type="button" aria-label="Toggle light/dark mode" title="Toggle light/dark mode">
+                    <i class="fa-solid fa-moon"></i><i class="fa-solid fa-sun"></i>
+                </button>
+                <a href="#contact" class="accent-btn px-4 md:px-6 py-2 rounded-sm text-[9px] md:text-[10px] uppercase">
+                    Book Discovery Call
+                </a>
+            </div>
+        </div>
+        <div id="mobile-menu" class="hidden lg:hidden border-t border-white/10 px-6 py-4 flex-col gap-4 text-[11px] font-bold tracking-[0.2em] uppercase text-gray-400">
+            <a href="#about" class="hover:text-white transition">About Me</a>
+            <a href="#skills" class="hover:text-white transition">Skills</a>
+            <a href="#services" class="hover:text-white transition">Services</a>
+            <a href="#projects" class="hover:text-white transition">Projects</a>
+            <a href="#pricing" class="hover:text-white transition">Pricing</a>
+            <a href="#contact" class="hover:text-white transition">Contact</a>
         </div>
     </nav>
 
@@ -390,20 +370,21 @@
                         Put Your <span class="text-orange-500">Repetitive Workflows<br> </span>on Autopilot.
                     </h1>
                     <p class="text-lg md:text-xl text-gray-400 mb-10 font-light leading-relaxed max-w-xl">
-                       I streamline business processes with smart GoHighLevel and AI automation—so your operations run smoothly while you focus on growth.
+                       I build GoHighLevel funnels and n8n AI automations for small businesses and agencies—so leads get captured, followed up and organised automatically while you focus on growth.
                     </p>
                     <div class="flex flex-col sm:flex-row gap-6">
                         <a href="#contact" class="accent-btn px-10 py-5 rounded-sm text-sm uppercase">
-                            Book Discovery Call
+                            Book a Free Discovery Call
                         </a>
-                        <a href="#works" class="flex items-center gap-4 text-white hover:text-orange-500 transition tracking-widest text-xs font-bold uppercase">
+                        <a href="#projects" class="flex items-center gap-4 text-white hover:text-orange-500 transition tracking-widest text-xs font-bold uppercase">
                             View Projects <i class="fas fa-arrow-right text-orange-500"></i>
                         </a>
                     </div>
+                    <p class="mt-6 text-xs text-gray-400 tracking-wide"><i class="fa-solid fa-circle-check text-orange-500 mr-2"></i>Free 30-minute call &middot; No obligation &middot; You leave with a clear automation plan</p>
                 </div>
                 <div class="flex justify-center lg:justify-end">
                     <div class="portrait-frame">
-                        <img src="Gilbert.jpg" alt="Gilbert Dulnuan" class="w-[280px] md:w-[400px] aspect-[3/4] object-cover rounded-sm shadow-2xl">
+                        <img src="Gilbert.webp" alt="Gilbert Dulnuan" width="400" height="533" fetchpriority="high" class="w-[280px] md:w-[400px] aspect-[3/4] object-cover rounded-sm shadow-2xl">
                     </div>
                 </div>
             </div>
@@ -446,6 +427,21 @@
     </div>
 
     <div class="container mx-auto px-6 md:px-16 relative z-10">
+            <div class="mb-16 max-w-4xl border border-white/10 bg-white/5 p-6 md:p-10 rounded-sm grid md:grid-cols-[240px_1fr] gap-10 md:gap-12 items-center">
+                <div class="flex justify-center md:justify-start">
+                    <div class="portrait-frame">
+                        <img src="Gilbert.webp" alt="Gilbert Dulnuan at work" width="240" height="300" loading="lazy" class="w-[200px] md:w-[240px] aspect-[4/5] object-cover rounded-sm">
+                    </div>
+                </div>
+                <div>
+                    <h4 class="text-[10px] tracking-[0.3em] text-orange-500 font-bold uppercase mb-4">My Story</h4>
+                    <div class="space-y-4 text-gray-400 text-sm md:text-base leading-relaxed">
+                        <p>I started out building sales funnels in GoHighLevel. Project after project, I saw the same problem: businesses weren't losing customers because their offer was bad. They were losing them because follow-up was slow, manual and easy to forget.</p>
+                        <p>So I kept going deeper. I learned n8n, Zapier and Make, then added AI, APIs and CRM integrations, so the whole journey from first click to booked call to organised data could run without someone babysitting it.</p>
+                        <p>Today I work directly with small businesses and agencies. I map the process, build the system, document it, and stay around to keep it running. My goal is simple: give you back your hours, so your team does the work only people can do.</p>
+                    </div>
+                </div>
+            </div>
         <div class="max-w-4xl">
             <h2 class="text-[10px] tracking-[0.5em] text-orange-500 font-bold uppercase mb-4">Why Work With Me</h2>
             <h3 class="text-3xl md:text-5xl font-extrabold mb-12 leading-tight">
@@ -456,26 +452,26 @@
             <div class="grid md:grid-cols-2 gap-8 md:gap-12">
                 <div class="border-l border-orange-500/30 pl-6 md:pl-8">
                     <p class="text-white font-bold mb-2">The Builder's Mindset</p>
-                    <p class="text-gray-500 text-sm">With over 3 years of experience, I design and build funnels in GoHighLevel and custom AI workflows using n8n, OpenAI, APIs, and CRM integrations that eliminate repetitive tasks and improve business efficiency.</p>
+                    <p class="text-gray-400 text-sm">With over 3 years of experience, I design and build funnels in GoHighLevel and custom AI workflows using n8n, OpenAI, APIs, and CRM integrations that eliminate repetitive tasks and improve business efficiency.</p>
                 </div>
                 <div class="border-l border-orange-500/30 pl-6 md:pl-8">
                     <p class="text-white font-bold mb-2">Production Over Prototypes</p>
-                    <p class="text-gray-500 text-sm">From CRM automation and email workflows to purchase order processing, data automation, AI agents, and AI chatbot integrations, every solution is tailored to save your team time, reduce manual errors, and deliver measurable ROI—allowing your business to scale without increasing administrative overhead.</p>
+                    <p class="text-gray-400 text-sm">From CRM automation and email workflows to purchase order processing, data automation, AI agents, and AI chatbot integrations, every solution is tailored to save your team time, reduce manual errors, and let your business scale without more administrative overhead.</p>
                 </div>
             </div>
 
             <div class="mt-12 grid md:grid-cols-3 gap-6 text-center">
                 <div class="p-6 bg-white/5 border border-white/10 rounded-sm backdrop-blur-sm">
-                    <div class="text-3xl md:text-4xl font-extrabold text-orange-500">9+</div>
-                    <div class="text-[9px] uppercase tracking-widest text-gray-500 mt-1">Production Workflows</div>
+                    <div class="text-3xl md:text-4xl font-extrabold text-orange-500">3+</div>
+                    <div class="text-[9px] uppercase tracking-widest text-gray-400 mt-1">Years Building Automations</div>
+                </div>
+                <div class="p-6 bg-white/5 border border-white/10 rounded-sm backdrop-blur-sm">
+                    <div class="text-3xl md:text-4xl font-extrabold text-orange-500">10</div>
+                    <div class="text-[9px] uppercase tracking-widest text-gray-400 mt-1">Projects Showcased Below</div>
                 </div>
                 <div class="p-6 bg-white/5 border border-white/10 rounded-sm backdrop-blur-sm">
                     <div class="text-3xl md:text-4xl font-extrabold text-orange-500">3</div>
-                    <div class="text-[9px] uppercase tracking-widest text-gray-500 mt-1">Platforms Mastered</div>
-                </div>
-                <div class="p-6 bg-white/5 border border-white/10 rounded-sm backdrop-blur-sm">
-                    <div class="text-3xl md:text-4xl font-extrabold text-orange-500">100%</div>
-                    <div class="text-[9px] uppercase tracking-widest text-gray-500 mt-1">Autonomous Execution</div>
+                    <div class="text-[9px] uppercase tracking-widest text-gray-400 mt-1">Core Platforms: GoHighLevel, n8n, Zapier/Make</div>
                 </div>
             </div>
         </div>
@@ -502,22 +498,22 @@
             <div class="gov-card p-8 md:p-10 text-center group">
                 <i class="fa-solid fa-diagram-project text-orange-500 text-2xl mb-4"></i>
                 <h5 class="font-bold mb-1 uppercase text-[10px] md:text-xs tracking-widest text-white">Automation Platforms</h5>
-                <p class="text-xs md:text-sm text-gray-500">n8n, GoHighLevel, Zapier & Make.com</p>
+                <p class="text-xs md:text-sm text-gray-400">n8n, GoHighLevel, Zapier & Make.com</p>
             </div>
             <div class="gov-card p-8 md:p-10 text-center group">
                 <i class="fa-solid fa-code text-orange-500 text-2xl mb-4"></i>
                 <h5 class="font-bold mb-1 uppercase text-[10px] md:text-xs tracking-widest text-white">AI & LLMs</h5>
-                <p class="text-xs md:text-sm text-gray-500">LangChain, OpenAI, Anthropic, Gemini, Vapi</p>
+                <p class="text-xs md:text-sm text-gray-400">LangChain, OpenAI, Anthropic, Gemini, Vapi</p>
             </div>
             <div class="gov-card p-8 md:p-10 text-center group">
                 <i class="fa-solid fa-database text-orange-500 text-2xl mb-4"></i>
                 <h5 class="font-bold mb-1 uppercase text-[10px] md:text-xs tracking-widest text-white">Data & Vector</h5>
-                <p class="text-xs md:text-sm text-gray-500">Pinecone, Supabase, Airtable, Google Sheets</p>
+                <p class="text-xs md:text-sm text-gray-400">Pinecone, Supabase, Airtable, Google Sheets</p>
             </div>
             <div class="gov-card p-8 md:p-10 text-center group">
                 <i class="fa-solid fa-cloud text-orange-500 text-2xl mb-4"></i>
                 <h5 class="font-bold mb-1 uppercase text-[10px] md:text-xs tracking-widest text-white">Integrations</h5>
-                <p class="text-xs md:text-sm text-gray-500">HubSpot, Slack, Apollo, Gmail, Calendar, Xero</p>
+                <p class="text-xs md:text-sm text-gray-400">HubSpot, Slack, Apollo, Gmail, Calendar, Xero</p>
             </div>
         </div>
 
@@ -525,17 +521,17 @@
             <div class="gov-card p-8 md:p-10 text-center group">
                 <i class="fa-solid fa-terminal text-orange-500 text-2xl mb-4"></i>
                 <h5 class="font-bold mb-1 uppercase text-[10px] md:text-xs tracking-widest text-white">Languages</h5>
-                <p class="text-xs md:text-sm text-gray-500">JavaScript, TypeScript, Python, SQL</p>
+                <p class="text-xs md:text-sm text-gray-400">JavaScript, TypeScript, Python, SQL</p>
             </div>
             <div class="gov-card p-8 md:p-10 text-center group">
                 <i class="fa-solid fa-brain text-orange-500 text-2xl mb-4"></i>
                 <h5 class="font-bold mb-1 uppercase text-[10px] md:text-xs tracking-widest text-white">Specializations</h5>
-                <p class="text-xs md:text-sm text-gray-500">RAG, Voice AI, Agentic Loops, HITL</p>
+                <p class="text-xs md:text-sm text-gray-400">RAG, Voice AI, Agentic Loops, HITL</p>
             </div>
             <div class="gov-card p-8 md:p-10 text-center group">
                 <i class="fa-solid fa-shield-halved text-orange-500 text-2xl mb-4"></i>
                 <h5 class="font-bold mb-1 uppercase text-[10px] md:text-xs tracking-widest text-white">Governance</h5>
-                <p class="text-xs md:text-sm text-gray-500">PII Redaction, Audit Logging, SOC2/GDPR Awareness</p>
+                <p class="text-xs md:text-sm text-gray-400">PII Redaction, Audit Logging, SOC2/GDPR Awareness</p>
             </div>
         </div>
     </div>
@@ -552,39 +548,39 @@
                 <div class="solution-card p-8 md:p-12 rounded-sm flex flex-col">
                     <i class="fa-solid fa-robot text-3xl mb-8 md:mb-10 text-orange-500"></i>
                     <h4 class="text-xl md:text-2xl font-bold mb-6">AI Workflow Development</h4>
-                    <p class="text-gray-500 text-sm mb-10 leading-relaxed">End-to-end n8n/Make workflows: lead enrichment, CRM sync, document processing, data validation, multi-step autonomous loops.</p>
+                    <p class="text-gray-400 text-sm mb-10 leading-relaxed">End-to-end n8n/Make workflows: lead enrichment, CRM sync, document processing, data validation, multi-step autonomous loops.</p>
                 </div>
                 <div class="solution-card p-8 md:p-12 rounded-sm flex flex-col">
                     <i class="fa-solid fa-filter text-3xl mb-8 md:mb-10 text-orange-500"></i>
                     <h4 class="text-xl md:text-2xl font-bold mb-6">GoHighLevel Funnels</h4>
-                    <p class="text-gray-500 text-sm mb-10 leading-relaxed">GoHighLevel funnel development and optimization for lead generation and conversion.</p>
+                    <p class="text-gray-400 text-sm mb-10 leading-relaxed">GoHighLevel funnel development and optimization for lead generation and conversion.</p>
                 </div>
                 <div class="solution-card p-8 md:p-12 rounded-sm flex flex-col">
                     <i class="fa-solid fa-brain text-3xl mb-8 md:mb-10 text-orange-500"></i>
                     <h4 class="text-xl md:text-2xl font-bold mb-6">RAG & Knowledge Systems</h4>
-                    <p class="text-gray-500 text-sm mb-10 leading-relaxed">Custom retrieval pipelines with Pinecone/Supabase. PII redaction, hybrid search, citation tracking, hallucination guardrails.</p>
+                    <p class="text-gray-400 text-sm mb-10 leading-relaxed">Custom retrieval pipelines with Pinecone/Supabase. PII redaction, hybrid search, citation tracking, hallucination guardrails.</p>
                 </div>
                 <div class="solution-card p-8 md:p-12 rounded-sm flex flex-col">
                     <i class="fa-solid fa-code text-3xl mb-8 md:mb-10 text-orange-500"></i>
                     <h4 class="text-xl md:text-2xl font-bold mb-6">Custom Functions & APIs</h4>
-                    <p class="text-gray-500 text-sm mb-10 leading-relaxed">JavaScript/TypeScript/Python nodes for complex logic: scoring algorithms, data transformation, external API orchestration.</p>
+                    <p class="text-gray-400 text-sm mb-10 leading-relaxed">JavaScript/TypeScript/Python nodes for complex logic: scoring algorithms, data transformation, external API orchestration.</p>
                 </div>
                 <div class="solution-card p-8 md:p-12 rounded-sm flex flex-col">
                     <i class="fa-solid fa-gears text-3xl mb-8 md:mb-10 text-orange-500"></i>
                     <h4 class="text-xl md:text-2xl font-bold mb-6">System Integration</h4>
-                    <p class="text-gray-500 text-sm mb-10 leading-relaxed">Connecting siloed tools: HubSpot ↔ Airtable ↔ Slack ↔ Google Workspace ↔ Xero ↔ Apollo. Bi-directional sync, webhooks, polling.</p>
+                    <p class="text-gray-400 text-sm mb-10 leading-relaxed">Connecting siloed tools: HubSpot ↔ Airtable ↔ Slack ↔ Google Workspace ↔ Xero ↔ Apollo. Bi-directional sync, webhooks, polling.</p>
                 </div>
                 <div class="solution-card p-8 md:p-12 rounded-sm flex flex-col">
                     <i class="fa-solid fa-shield-halved text-3xl mb-8 md:mb-10 text-orange-500"></i>
                     <h4 class="text-xl md:text-2xl font-bold mb-6">Governance & HITL</h4>
-                    <p class="text-gray-500 text-sm mb-10 leading-relaxed">Human-in-the-loop gates, audit trails, approval workflows, rollback mechanisms. Production-grade reliability.</p>
+                    <p class="text-gray-400 text-sm mb-10 leading-relaxed">Human-in-the-loop gates, audit trails, approval workflows, rollback mechanisms. Production-grade reliability.</p>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- PROCESS SECTION -->
-    <section id="process" class="py-20 md:py-32 bg-[#050505] section-glow">
+    <section id="process" class="relative py-20 md:py-32 bg-[#050505] section-glow">
         <!-- BACKGROUND IMAGE & OVERLAY -->
     <div class="absolute inset-0 z-0 pointer-events-none">
         <img src="bg/bg4.webp" alt="Background" class="w-full h-full object-cover opacity-20">
@@ -602,7 +598,7 @@
                         <span class="font-extrabold">1</span>
                     </div>
                     <h4 class="font-bold mb-2 text-lg">Discovery</h4>
-                    <p class="text-sm text-gray-500">30-min call to map pain points, identify 3 highest-ROI automations, align on success metrics.</p>
+                    <p class="text-sm text-gray-400">30-min call to map pain points, identify 3 highest-ROI automations, align on success metrics.</p>
                 </div>
                 <div class="relative text-center group hidden md:block">
                     <div class="absolute top-8 left-1/2 w-full h-1 bg-white/5" style="z-index: 0;"></div>
@@ -612,7 +608,7 @@
                         <span class="font-extrabold">2</span>
                     </div>
                     <h4 class="font-bold mb-2 text-lg">Spec & Design</h4>
-                    <p class="text-sm text-gray-500">Written technical spec: data flow, error handling, HITL gates, test cases. You approve before build.</p>
+                    <p class="text-sm text-gray-400">Written technical spec: data flow, error handling, HITL gates, test cases. You approve before build.</p>
                 </div>
                 <div class="relative text-center group hidden md:block">
                     <div class="absolute top-8 left-1/2 w-full h-1 bg-white/5" style="z-index: 0;"></div>
@@ -622,7 +618,7 @@
                         <span class="font-extrabold">3</span>
                     </div>
                     <h4 class="font-bold mb-2 text-lg">Build</h4>
-                    <p class="text-sm text-gray-500">Develop in n8n/Make with custom functions. Daily progress in shared Notion. Code review before deploy.</p>
+                    <p class="text-sm text-gray-400">Develop in n8n/Make with custom functions. Daily progress in shared Notion. Code review before deploy.</p>
                 </div>
                 <div class="relative text-center group hidden md:block">
                     <div class="absolute top-8 left-1/2 w-full h-1 bg-white/5" style="z-index: 0;"></div>
@@ -632,7 +628,7 @@
                         <span class="font-extrabold">4</span>
                     </div>
                     <h4 class="font-bold mb-2 text-lg">Deploy & Test</h4>
-                    <p class="text-sm text-gray-500">Staging → production with real data. HITL gates verified. Rollback plan documented. You get full docs + Loom walkthrough.</p>
+                    <p class="text-sm text-gray-400">Staging → production with real data. HITL gates verified. Rollback plan documented. You get full docs + Loom walkthrough.</p>
                 </div>
                 <div class="relative text-center group hidden md:block">
                     <div class="absolute top-8 left-1/2 w-full h-1 bg-white/5" style="z-index: 0;"></div>
@@ -642,7 +638,7 @@
                         <span class="font-extrabold">5</span>
                     </div>
                     <h4 class="font-bold mb-2 text-lg">Support</h4>
-                    <p class="text-sm text-gray-500">30-day warranty included. Retainer options for monitoring, updates, new automations. You're never stuck.</p>
+                    <p class="text-sm text-gray-400">30-day warranty included. Retainer options for monitoring, updates, new automations. You're never stuck.</p>
                 </div>
             </div>
         </div>
@@ -654,15 +650,15 @@
             <div class="mb-16 md:mb-24 text-center">
                 <h2 class="text-[10px] tracking-[0.5em] text-orange-500 font-bold uppercase mb-4">Engagement Models</h2>
                 <h3 class="text-3xl md:text-6xl font-extrabold">Choose Your Path</h3>
-                <p class="text-gray-400 max-w-2xl mx-auto mt-6 font-light">Transparent pricing. No hidden fees. Every tier includes 30-day warranty.</p>
+                <p class="text-gray-400 max-w-2xl mx-auto mt-6 font-light">Introductory launch rates for my first clients. Transparent pricing, no hidden fees, and every build includes a 30-day warranty.</p>
             </div>
             <div class="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
                 <div class="solution-card p-8 md:p-10 rounded-sm flex flex-col">
                     <h4 class="text-xl md:text-2xl font-bold mb-2">Discovery Sprint</h4>
-                    <p class="text-gray-500 text-sm mb-6">For teams exploring automation opportunities</p>
+                    <p class="text-gray-400 text-sm mb-6">For teams exploring automation opportunities</p>
                     <div class="mb-6">
                         <span class="text-4xl md:text-5xl font-extrabold text-orange-500">$150</span>
-                        <span class="text-gray-500 ml-2">/week</span>
+                        <span class="text-gray-400 ml-2">one-time</span>
                     </div>
                     <ul class="space-y-3 mb-8 flex-1">
                         <li class="flex items-center gap-3 text-sm text-gray-400"><i class="fa-solid fa-check text-orange-500 text-xs"></i> 2-week deep-dive audit</li>
@@ -676,10 +672,10 @@
                 <div class="solution-card p-8 md:p-10 rounded-sm flex flex-col border-orange-500/30 relative">
                     <div class="absolute -top-3 left-1/2 -translate-x-1/2 bg-orange-500 text-black text-[9px] font-bold uppercase tracking-widest px-3 py-1 rounded-sm">Most Popular</div>
                     <h4 class="text-xl md:text-2xl font-bold mb-2">Build Engagement</h4>
-                    <p class="text-gray-500 text-sm mb-6">For teams ready to deploy production automations</p>
+                    <p class="text-gray-400 text-sm mb-6">For teams ready to deploy production automations</p>
                     <div class="mb-6">
-                        <span class="text-4xl md:text-5xl font-extrabold text-orange-500">$450</span>
-                        <span class="text-gray-500 ml-2">/week</span>
+                        <span class="text-gray-400 mr-1 text-sm">from</span><span class="text-4xl md:text-5xl font-extrabold text-orange-500">$450</span>
+                        <span class="text-gray-400 ml-2">/ project</span>
                     </div>
                     <ul class="space-y-3 mb-8 flex-1">
                         <li class="flex items-center gap-3 text-sm text-gray-400"><i class="fa-solid fa-check text-orange-500 text-xs"></i> Scoped build: full workflow end-to-end</li>
@@ -692,10 +688,10 @@
                 </div>
                 <div class="solution-card p-8 md:p-10 rounded-sm flex flex-col">
                     <h4 class="text-xl md:text-2xl font-bold mb-2">Monthly Retainer</h4>
-                    <p class="text-gray-500 text-sm mb-6">For teams building an automation capability</p>
+                    <p class="text-gray-400 text-sm mb-6">For teams building an automation capability</p>
                     <div class="mb-6">
                         <span class="text-4xl md:text-5xl font-extrabold text-orange-500">$500</span>
-                        <span class="text-gray-500 ml-2">/month</span>
+                        <span class="text-gray-400 ml-2">/month</span>
                     </div>
                     <ul class="space-y-3 mb-8 flex-1">
                         <li class="flex items-center gap-3 text-sm text-gray-400"><i class="fa-solid fa-check text-orange-500 text-xs"></i> Ongoing automation development</li>
@@ -709,74 +705,6 @@
             </div>
         </div>
     </section>
-
-    <!-- TESTIMONIALS SECTION -->
-<section id="reviews" class="relative py-20 md:py-32 bg-black overflow-hidden">
-   
-    <!-- 1. BACKGROUND LAYER (z-0) -->
-    <div class="absolute inset-0 z-0 pointer-events-none">
-        <img src="bg/bg5.webp" alt="Background" class="w-full h-full object-cover opacity-30">
-        <div class="absolute inset-0 bg-gradient-to-b from-black via-transparent to-black"></div>
-    </div>
-
-    <!-- 2. CONTENT LAYER (Added relative z-10 here) -->
-    <div class="container mx-auto px-6 md:px-16 relative z-10">
-        <div class="mb-16 md:mb-24 text-center">
-            <h2 class="text-[10px] tracking-[0.5em] text-orange-500 font-bold uppercase mb-4">Client Feedback</h2>
-            <h3 class="text-3xl md:text-6xl font-extrabold text-white">Results That Speak</h3>
-        </div>
-
-        <div class="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
-            <!-- Card 1 -->
-            <div class="gov-card p-8 md:p-10 bg-white/5 backdrop-blur-sm border border-white/10">
-                <div class="flex items-center gap-2 mb-6">
-                    <i class="fa-solid fa-star text-orange-500"></i>
-                    <i class="fa-solid fa-star text-orange-500"></i>
-                    <i class="fa-solid fa-star text-orange-500"></i>
-                    <i class="fa-solid fa-star text-orange-500"></i>
-                    <i class="fa-solid fa-star text-orange-500"></i>
-                </div>
-                <p class="text-gray-200 text-lg leading-relaxed mb-8">"Gilbert built our lead enrichment pipeline in 2 weeks. What used to take our sales team 15 hours/week now runs automatically. The ROI was immediate."</p>
-                <div class="border-t border-white/10 pt-6">
-                    <p class="font-bold text-white">Sarah Chen</p>
-                    <p class="text-sm text-gray-500">VP Sales, Series B SaaS</p>
-                </div>
-            </div>
-
-            <!-- Card 2 -->
-            <div class="gov-card p-8 md:p-10 bg-white/5 backdrop-blur-sm border border-white/10">
-                <div class="flex items-center gap-2 mb-6">
-                    <i class="fa-solid fa-star text-orange-500"></i>
-                    <i class="fa-solid fa-star text-orange-500"></i>
-                    <i class="fa-solid fa-star text-orange-500"></i>
-                    <i class="fa-solid fa-star text-orange-500"></i>
-                    <i class="fa-solid fa-star text-orange-500"></i>
-                </div>
-                <p class="text-gray-200 text-lg leading-relaxed mb-8">"The voice AI agent Gilbert deployed handles 80% of our inbound qualification calls. Our calendar fill rate jumped 40% in the first month."</p>
-                <div class="border-t border-white/10 pt-6">
-                    <p class="font-bold text-white">Marcus Rodriguez</p>
-                    <p class="text-sm text-gray-500">Founder, PropTech Startup</p>
-                </div>
-            </div>
-
-            <!-- Card 3 -->
-            <div class="gov-card p-8 md:p-10 bg-white/5 backdrop-blur-sm border border-white/10">
-                <div class="flex items-center gap-2 mb-6">
-                    <i class="fa-solid fa-star text-orange-500"></i>
-                    <i class="fa-solid fa-star text-orange-500"></i>
-                    <i class="fa-solid fa-star text-orange-500"></i>
-                    <i class="fa-solid fa-star text-orange-500"></i>
-                    <i class="fa-solid fa-star text-orange-500"></i>
-                </div>
-                <p class="text-gray-200 text-lg leading-relaxed mb-8">"We had 3 years of messy CRM data. Gilbert's validation workflow cleaned 50K+ records in a weekend. Zero data loss, full audit trail."</p>
-                <div class="border-t border-white/10 pt-6">
-                    <p class="font-bold text-white">Jennifer Park</p>
-                    <p class="text-sm text-gray-500">Operations Lead, FinTech</p>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
 
     <!-- PROJECTS SECTION -->
     <section id="projects" class="py-20 md:py-32 bg-black">
@@ -794,7 +722,8 @@
     <!-- CASE STUDY MODAL -->
     <div id="case-modal">
         <div class="modal-content">
-            <button onclick="closeCaseModal()" class="absolute top-6 right-6 text-white/50 hover:text-white text-3xl z-10">&times;</button>
+            <button onclick="closeCaseModal()" aria-label="Close" class="modal-close absolute top-4 right-4 w-10 h-10 rounded-full flex items-center justify-center text-3xl leading-none z-10">&times;</button>
+            <div id="modal-video" class="hidden w-full aspect-video bg-black"></div>
             <img id="modal-img" src="" class="w-full aspect-video object-contain bg-black" loading="lazy">
             <div class="p-8 md:p-12">
                 <div id="modal-badge" class="inline-block px-3 py-1 bg-orange-500 text-black text-[9px] font-bold uppercase tracking-widest mb-6">Sector</div>
@@ -814,26 +743,19 @@
                     <p class="text-gray-400 max-w-xl mx-auto font-light text-sm md:text-base">Available for freelance, contract, and full-time roles. Let's discuss your automation challenge.</p>
                 </div>
                 <div class="bg-white/5 border border-white/10 p-8 md:p-12 rounded-sm">
-                    <h4 class="font-bold mb-6 uppercase text-[10px] tracking-widest text-orange-500 text-center">Schedule a Discovery Call</h4>
-                    <div class="calendar-container shadow-2xl">
-                        <!-- Google Calendar Appointment Scheduling begin -->
-                        <iframe src="https://calendar.google.com/calendar/appointments/schedules/AcZssZ1JdDSI4U3hhO_KC9n93prgUxfPw46WPaQ5iWsBtYYrBlfdP-lQSMiVT1sa7o7_UnAPi4ijuKTy?gv=true" style="border: 0" width="100%" height="600" frameborder="0"></iframe>
-                        <!-- end Google Calendar Appointment Scheduling -->
-                                            
-
+                    <h4 class="font-bold mb-4 uppercase text-[10px] tracking-widest text-orange-500 text-center">Book a Free Discovery Call</h4>
+                    <p class="text-center text-gray-400 text-sm max-w-xl mx-auto mb-8">We'll walk through how your business runs today and pinpoint the 3 best things to automate. You leave with a clear plan whether or not we work together.</p>
+                    <div id="call-tabs" class="hidden justify-center gap-3 mb-6 text-[10px] font-bold uppercase tracking-widest">
+                        <button type="button" data-url="" data-key="30min" class="call-tab active px-4 py-2 border border-white/10 rounded-sm">30-min Discovery Call</button>
+                        <button type="button" data-url="" data-key="15min" class="call-tab px-4 py-2 border border-white/10 rounded-sm">15-min Quick Chat</button>
                     </div>
-                    <p class="text-center text-gray-500 text-sm mt-4">
-  Calendar not loading?
-  
-
-
-<!-- Calendly link widget begin -->
-<link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
-<script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript" async></script>
-<a href="" onclick="Calendly.initPopupWidget({url: 'https://calendly.com/gilbeyautomation/30min'});return false;"  class="text-orange-500 hover:underline font-medium">
-     Book on Calendly &rarr;
-  </a>
-<!-- Calendly link widget end -->
+                    <div class="calendar-container shadow-2xl">
+                        <!-- Calendly inline widget begin -->
+                        <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
+                        <div id="calendly-embed" class="calendly-inline-widget" data-url="https://calendly.com/gilbeyautomation/30min" style="min-width:320px;height:700px;"></div>
+                        <script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript" async></script>
+                        <!-- Calendly inline widget end -->
+                    </div>
                 </div>
             </div>
         </div>
@@ -847,16 +769,16 @@
                         <i class="fa-solid fa-user text-orange-500 text-sm"></i>
                         <span class="logo-text">GILBERT DULNUAN</span>
                     </div>
-                    <p class="text-gray-500 text-xs leading-relaxed max-w-xs">GoHighLevel funnels, opportunity pipelines specialist, and AI Automation Engineer building autonomous workflows with n8n, LangChain, and custom agents. Production-ready systems, not prototypes.</p>
+                    <p class="text-gray-400 text-xs leading-relaxed max-w-xs">GoHighLevel funnels, opportunity pipelines specialist, and AI Automation Engineer building autonomous workflows with n8n, LangChain, and custom agents. Production-ready systems, not prototypes.</p>
                 </div>
                 <div class="flex flex-col gap-4">
                     <h4 class="text-[10px] font-bold uppercase tracking-widest text-white">Contact</h4>
-                    <a href="mailto:gdulnuan.systems@gmail.com" class="text-gray-500 hover:text-orange-500 transition text-sm">gdulnuan.systems@gmail.com</a>
-                    <a href="https://wa.me/89996892790" target="_blank" class="text-gray-500 hover:text-orange-500 transition text-sm">Whatsapp: +7 999 679 2790</a>
+                    <a href="mailto:gdulnuan.systems@gmail.com" class="text-gray-400 hover:text-orange-500 transition text-sm">gdulnuan.systems@gmail.com</a>
+                    <a href="https://wa.me/89996892790" target="_blank" class="text-gray-400 hover:text-orange-500 transition text-sm">Whatsapp: +7 999 679 2790</a>
                 </div>
                 <div class="flex flex-col gap-4">
                     <h4 class="text-[10px] font-bold uppercase tracking-widest text-white">Social</h4>
-                    <a href="https://www.linkedin.com/in/gil-dulnuan/" target="_blank" rel="noopener" class="text-gray-500 hover:text-orange-500 transition text-sm flex items-center gap-2"><i class="fab fa-linkedin"></i> LinkedIn Profile</a>
+                    <a href="https://www.linkedin.com/in/gil-dulnuan/" target="_blank" rel="noopener" class="text-gray-400 hover:text-orange-500 transition text-sm flex items-center gap-2"><i class="fab fa-linkedin"></i> LinkedIn Profile</a>
                 </div>
             </div>
             <div class="pt-12 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-8 text-center md:text-left">
@@ -866,18 +788,46 @@
     </footer>
 
   
-    <!-- CHAT WIDGET -->
-    <button id="chat-widget-button"><i class="fa-solid fa-robot"></i><span>Let's Talk</span></button>
-    <div id="chat-widget-container">
-        <div id="chat-widget-header"><span>This is my AI Agent powered by RAG.</span><button onclick="closeChatWidget()">✖</button></div>
-        <div id="chat-widget-body"><p style="background: rgba(255,255,255,0.05); color: #aaa;"><strong>Hi 👋</strong> Ask me about my work, skills, or projects.</p></div>
-        <div id="chat-widget-footer"><input type="text" id="chat-widget-input" placeholder="Type here..."><button id="chat-widget-send">Send</button></div>
-    </div>
-
     <script>
+        /* --- SITE CONFIG (fill these in) --- */
+        // Plausible analytics: put your site domain here (e.g. 'gilbertdulnuan.com') to switch tracking on.
+        const PLAUSIBLE_DOMAIN = '';
+        // Optional 15-min call: create a 15-minute event type in Calendly and paste its link here.
+        const CALENDLY_15MIN = ''; // e.g. 'https://calendly.com/gilbeyautomation/15min'
+        const CALENDLY_30MIN = 'https://calendly.com/gilbeyautomation/30min';
+
+        /* --- ANALYTICS (privacy-friendly, no cookies; inactive until PLAUSIBLE_DOMAIN is set) --- */
+        if (PLAUSIBLE_DOMAIN) {
+            const t = document.createElement('script');
+            t.defer = true; t.dataset.domain = PLAUSIBLE_DOMAIN; t.src = 'https://plausible.io/js/script.js';
+            document.head.appendChild(t);
+        }
+        window.plausible = window.plausible || function () { (window.plausible.q = window.plausible.q || []).push(arguments); };
+        function track(name, props) { try { window.plausible(name, props ? { props } : undefined); } catch (e) {} }
+
+        // Book-button clicks (any link to #contact) and scroll depth to the booking section
+        document.querySelectorAll('a[href="#contact"]').forEach(a => a.addEventListener('click', () => track('Book Click', { label: a.textContent.trim() })));
+        new IntersectionObserver((es, o) => { if (es[0].isIntersecting) { track('Booking Section Viewed'); o.disconnect(); } }, { threshold: 0.3 }).observe(document.getElementById('contact'));
+
+        /* --- CALL TYPE TABS (shown only when a 15-min link is configured) --- */
+        if (CALENDLY_15MIN) {
+            const tabs = document.getElementById('call-tabs');
+            const embed = document.getElementById('calendly-embed');
+            tabs.classList.remove('hidden'); tabs.classList.add('flex');
+            const urls = { '30min': CALENDLY_30MIN, '15min': CALENDLY_15MIN };
+            tabs.querySelectorAll('.call-tab').forEach(btn => btn.addEventListener('click', () => {
+                tabs.querySelectorAll('.call-tab').forEach(b => b.classList.toggle('active', b === btn));
+                embed.innerHTML = '';
+                embed.setAttribute('data-url', urls[btn.dataset.key]);
+                if (window.Calendly) Calendly.initInlineWidget({ url: urls[btn.dataset.key], parentElement: embed });
+                track('Call Type Selected', { type: btn.dataset.key });
+            }));
+        }
+
         /* --- CALENDLY & MESSAGE EVENT LISTENERS FOR N8N WEBHOOK --- */
         window.addEventListener('message', function(e) {
           if (e.data && e.data.event === 'calendly.event_scheduled') {
+            track('Call Booked');
             fetch('https://cornball-empathy-bath.ngrok-free.dev/webhook-test/gd-automation-booking', {
               method: 'POST',
               headers: { 'Content-Type': 'application/json' },
@@ -893,58 +843,65 @@
         /* --- CASE STUDIES DATA (ALL 9 PROJECTS) --- */
         const projects = [
             { 
+                img: 'projects/ADAM Personal Assistant.webp',
+                video: '', // paste a Loom/YouTube EMBED url here (e.g. https://www.loom.com/embed/xxxx) to show a demo video 
+                sector: 'AI Agents / CRM', 
+                title: 'ADAM – Telegram AI Personal Assistant with CRM Control', 
+                desc: '<p><strong>Pain Point:</strong> Running a business means constantly switching between the CRM, inbox, calendar and notes just to find a contact, log an activity, update a deal or send a follow-up. Simple admin tasks eat up the day and nothing gets done when you are away from your desk.</p><p><strong>Solution:</strong> An n8n AI agent, powered by Google Gemini, that lives in Telegram. Send it a plain-language message and it decides which tool to use: find, tag, untag or manage contacts, look up and update deals, log activities, book appointments, check and send email, and search a private knowledge base (RAG via a Postgres vector store with local Ollama embeddings). Postgres chat memory keeps context between conversations, so it remembers what you asked earlier.</p><p><strong class="text-orange-500">Result:</strong> Your CRM and inbox controlled from one chat, with no dashboards to open and no manual data entry, from any device at any hour.</p>' 
+            },
+            { 
                 img: 'projects/AI-Powered Urgent Email Dispatcher.webp', 
                 sector: 'Customer Support', 
                 title: 'AI-Powered Urgent Email Dispatcher', 
-                desc: '<p><strong>Pain Point:</strong> High-priority client emails buried in high-volume inboxes, causing delayed responses to critical issues.</p><p><strong>Solution:</strong> Zapier workflow using AI to analyze email intent and instantly route urgent requests to dedicated Slack channels.</p><p><strong class="text-orange-500">Result:</strong> 92% reduction in urgent email response time. 15 hrs/week saved. Zero missed critical emails in 6 months.</p>' 
+                desc: '<p><strong>Pain Point:</strong> High-priority client emails buried in high-volume inboxes, causing delayed responses to critical issues.</p><p><strong>Solution:</strong> Zapier workflow using AI to analyze email intent and instantly route urgent requests to dedicated Slack channels.</p><p><strong class="text-orange-500">Result:</strong> Urgent client emails reach the right Slack channel within moments, so critical issues stop getting buried.</p>' 
             },
             { 
                 img: 'projects/Autonomous Voice AI Appointment Setter.webp', 
                 sector: 'Operations', 
                 title: 'Autonomous Voice AI Appointment Setter', 
-                desc: '<p><strong>Pain Point:</strong> Revenue lost when prospects fail to book due to manual scheduling friction and back-and-forth coordination.</p><p><strong>Solution:</strong> n8n workflow integrating Vapi Voice AI with Google Calendar to autonomously check availability and book meetings into Airtable.</p><p><strong class="text-orange-500">Result:</strong> 40% increase in calendar fill rate. 80% of inbound calls handled without human intervention. $12K+ recovered monthly revenue.</p>' 
+                desc: '<p><strong>Pain Point:</strong> Revenue lost when prospects fail to book due to manual scheduling friction and back-and-forth coordination.</p><p><strong>Solution:</strong> n8n workflow integrating Vapi Voice AI with Google Calendar to autonomously check availability and book meetings into Airtable.</p><p><strong class="text-orange-500">Result:</strong> Inbound calls are answered and booked around the clock without back-and-forth, and meetings land straight in the calendar and Airtable.</p>' 
             },
             { 
                 img: 'projects/Automated Lead Enrichment & CRM Sync.webp', 
                 sector: 'Sales / CRM', 
                 title: 'Automated Lead Enrichment & CRM Sync', 
-                desc: '<p><strong>Pain Point:</strong> Sales teams wasting hours manually researching leads and entering data into HubSpot from disconnected sources.</p><p><strong>Solution:</strong> Workflow captures leads via webhook, enriches via Apollo.io, auto-syncs across HubSpot and Google Sheets.</p><p><strong class="text-orange-500">Result:</strong> 15 hrs/week saved per sales rep. 100% data consistency. Lead-to-meeting conversion up 28%.</p>' 
+                desc: '<p><strong>Pain Point:</strong> Sales teams wasting hours manually researching leads and entering data into HubSpot from disconnected sources.</p><p><strong>Solution:</strong> Workflow captures leads via webhook, enriches via Apollo.io, auto-syncs across HubSpot and Google Sheets.</p><p><strong class="text-orange-500">Result:</strong> Every new lead arrives enriched and synced across HubSpot and Google Sheets with no manual research or copy-paste.</p>' 
             },
             { 
                 img: 'projects/End-to-End Project Lifecycle Automation.webp', 
                 sector: 'Project Management', 
                 title: 'End-to-End Project Lifecycle Automation', 
-                desc: '<p><strong>Pain Point:</strong> Manual milestone tracking in Asana causing inconsistent client updates and fragmented Drive file management.</p><p><strong>Solution:</strong> Multi-path Zapier workflow monitoring Asana updates to trigger client emails, organize Drive folders, manage subtasks.</p><p><strong class="text-orange-500">Result:</strong> 90% reduction in PM admin time. Zero missed client communications. 50+ projects automated.</p>' 
+                desc: '<p><strong>Pain Point:</strong> Manual milestone tracking in Asana causing inconsistent client updates and fragmented Drive file management.</p><p><strong>Solution:</strong> Multi-path Zapier workflow monitoring Asana updates to trigger client emails, organize Drive folders, manage subtasks.</p><p><strong class="text-orange-500">Result:</strong> Clients get consistent milestone updates and Drive folders stay organised automatically, cutting project-management admin.</p>' 
             },
             { 
                 img: 'projects/Intelligent Lead Scoring & Response System.webp', 
                 sector: 'Marketing', 
                 title: 'Intelligent Lead Scoring & Response System', 
-                desc: '<p><strong>Pain Point:</strong> Marketing teams unable to prioritize "hot" leads instantly, resulting in generic outreach that fails to engage high-intent prospects.</p><p><strong>Solution:</strong> n8n workflow with custom JavaScript scoring incoming Gmail leads, triggering tailored responses by prospect quality.</p><p><strong class="text-orange-500">Result:</strong> 3x response rate on scored leads. 60% faster lead-to-reply. Top 20% of leads get instant personalized follow-up.</p>' 
+                desc: '<p><strong>Pain Point:</strong> Marketing teams unable to prioritize "hot" leads instantly, resulting in generic outreach that fails to engage high-intent prospects.</p><p><strong>Solution:</strong> n8n workflow with custom JavaScript scoring incoming Gmail leads, triggering tailored responses by prospect quality.</p><p><strong class="text-orange-500">Result:</strong> High-intent leads get an instant, personalised reply while lower-priority leads follow a lighter path.</p>' 
             },
             { 
                 img: 'projects/Secure Data Validation & Database Sync.webp', 
                 sector: 'Data Governance', 
                 title: 'Secure Data Validation & Database Sync', 
-                desc: '<p><strong>Pain Point:</strong> Invalid emails and duplicate records corrupting databases, causing failed campaigns and unreliable reporting.</p><p><strong>Solution:</strong> Real-time validation workflow with "lookup-or-update" logic in Google Sheets to maintain clean master records.</p><p><strong class="text-orange-500">Result:</strong> 99.8% email deliverability. 50K+ records cleaned. Zero duplicate entries in 12 months.</p>' 
+                desc: '<p><strong>Pain Point:</strong> Invalid emails and duplicate records corrupting databases, causing failed campaigns and unreliable reporting.</p><p><strong>Solution:</strong> Real-time validation workflow with "lookup-or-update" logic in Google Sheets to maintain clean master records.</p><p><strong class="text-orange-500">Result:</strong> Invalid emails and duplicates are stopped at the door, keeping the master sheet clean and campaign data reliable.</p>' 
             },
             { 
                 img: 'projects/AI Chatbot powered by RAG for Real Estate.webp', 
                 sector: 'Real Estate / Support', 
                 title: 'AI Chatbot powered by RAG for Real Estate', 
-                desc: '<p><strong>Pain Point:</strong> Agents losing high-value leads when unable to provide instant property details outside business hours.</p><p><strong>Solution:</strong> n8n workflow deploying AI agent retrieving property data from knowledge base for instant Telegram support.</p><p><strong class="text-orange-500">Result:</strong> 24/7 coverage without overtime. 35% more qualified lead captures. 3-minute avg response time.</p>' 
+                desc: '<p><strong>Pain Point:</strong> Agents losing high-value leads when unable to provide instant property details outside business hours.</p><p><strong>Solution:</strong> n8n workflow deploying AI agent retrieving property data from knowledge base for instant Telegram support.</p><p><strong class="text-orange-500">Result:</strong> Prospects get instant, accurate property answers on Telegram outside business hours, and the agent follows up on real leads.</p>' 
             },
             { 
                 img: 'projects/Automated Financial & Task Reconciliation.webp', 
                 sector: 'FinTech / Operations', 
                 title: 'Automated Financial & Task Reconciliation', 
-                desc: '<p><strong>Pain Point:</strong> Manual reconciliation of Asana task completions with Xero financial records creating admin overhead and error risk.</p><p><strong>Solution:</strong> Make.com orchestration automating task-to-ERP sync for 100% data integrity.</p><p><strong class="text-orange-500">Result:</strong> Zero reconciliation errors. 20 hrs/month saved. Audit-ready financial records automatically.</p>' 
+                desc: '<p><strong>Pain Point:</strong> Manual reconciliation of Asana task completions with Xero financial records creating admin overhead and error risk.</p><p><strong>Solution:</strong> Make.com orchestration automating task-to-ERP sync for 100% data integrity.</p><p><strong class="text-orange-500">Result:</strong> Completed Asana tasks reconcile with Xero automatically, removing manual double entry and leaving a clean audit trail.</p>' 
             },
             { 
                 img: 'projects/Intelligent AI Document Processing.webp', 
                 sector: 'Enterprise / Data', 
                 title: 'Intelligent AI Document Processing', 
-                desc: '<p><strong>Pain Point:</strong> Teams spending excessive time manually downloading, reading, and logging data from email attachments into databases.</p><p><strong>Solution:</strong> Workflow using Google Gemini AI to auto-analyze incoming attachments and log structured data to Google Sheets.</p><p><strong class="text-orange-500">Result:</strong> 85% reduction in manual data entry. 500+ docs/month processed. 99.2% extraction accuracy.</p>' 
+                desc: '<p><strong>Pain Point:</strong> Teams spending excessive time manually downloading, reading, and logging data from email attachments into databases.</p><p><strong>Solution:</strong> Workflow using Google Gemini AI to auto-analyze incoming attachments and log structured data to Google Sheets.</p><p><strong class="text-orange-500">Result:</strong> Email attachments are read by AI and logged as structured rows in Google Sheets, replacing manual data entry.</p>' 
             }
         ];
 
@@ -954,8 +911,11 @@
             const card = document.createElement('div');
             card.className = 'case-card';
             card.onclick = () => openCaseModal(index);
+            card.tabIndex = 0;
+            card.setAttribute('role', 'button');
+            card.onkeydown = (e) => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); openCaseModal(index); } };
             card.innerHTML = `
-                <img src="${p.img}" alt="${p.title}" loading="lazy">
+                <img src="${p.img}" alt="${p.title}" loading="lazy" width="640" height="360">
                 <div class="case-card-content">
                     <p class="text-orange-500 text-[8px] font-bold uppercase tracking-widest mb-2">${p.sector}</p>
                     <h4 class="text-lg font-bold leading-tight">${p.title}</h4>
@@ -966,7 +926,13 @@
 
         function openCaseModal(index) {
             const p = projects[index];
-            document.getElementById('modal-img').src = p.img;
+            track('Project Viewed', { title: p.title });
+            const img = document.getElementById('modal-img');
+            const vid = document.getElementById('modal-video');
+            img.src = p.img;
+            img.classList.toggle('hidden', !!p.video);
+            vid.classList.toggle('hidden', !p.video);
+            vid.innerHTML = p.video ? `<iframe src="${p.video}" class="w-full h-full" allowfullscreen loading="lazy" allow="autoplay; fullscreen; picture-in-picture" style="border:0"></iframe>` : '';
             document.getElementById('modal-title').innerText = p.title;
             document.getElementById('modal-badge').innerText = p.sector;
             document.getElementById('modal-desc').innerHTML = p.desc;
@@ -974,101 +940,32 @@
             document.body.style.overflow = 'hidden';
         }
 
+        document.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeCaseModal(); });
+
         function closeCaseModal() {
             document.getElementById('case-modal').style.display = 'none';
+            document.getElementById('modal-video').innerHTML = '';
             document.body.style.overflow = 'auto';
         }
 
-        /* --- CHAT LOGIC --- */
-        const chatButton = document.getElementById("chat-widget-button");
-        const chatContainer = document.getElementById("chat-widget-container");
-        const chatBody = document.getElementById("chat-widget-body");
-        const chatInput = document.getElementById("chat-widget-input");
-        const chatSend = document.getElementById("chat-widget-send");
-        const CHAT_WEBHOOK = 'https://cornball-empathy-bath.ngrok-free.dev/webhook/chat';
-        const WEBHOOK_SECRET = 'c8002c19bb776b860f7ee8605d6b269d'; // Must match n8n Verify Secret node
-
-        chatButton.onclick = () => {
-            chatContainer.style.display = "flex";
-            chatButton.style.display = "none";
-            chatInput.focus();
-        };
-
-        function closeChatWidget() {
-            chatContainer.style.display = "none";
-            chatButton.style.display = "flex";
+        /* --- MOBILE MENU --- */
+        const menuToggle = document.getElementById('menu-toggle');
+        const mobileMenu = document.getElementById('mobile-menu');
+        function setMenu(open) {
+            mobileMenu.classList.toggle('hidden', !open);
+            mobileMenu.classList.toggle('flex', open);
+            menuToggle.setAttribute('aria-expanded', open);
+            menuToggle.querySelector('i').className = open ? 'fa-solid fa-xmark' : 'fa-solid fa-bars';
         }
+        menuToggle.addEventListener('click', () => setMenu(mobileMenu.classList.contains('hidden')));
+        mobileMenu.querySelectorAll('a').forEach(a => a.addEventListener('click', () => setMenu(false)));
 
-        function addMessage(text, isUser = false) {
-            const msg = document.createElement("p");
-            msg.textContent = text;
-            msg.style.alignSelf = isUser ? "flex-end" : "flex-start";
-            msg.style.background = isUser ? "rgba(255,94,0)" : "rgba(255,255,94,0.05)";
-            msg.style.borderRadius = "12px";
-            msg.style.padding = "12px 16px";
-            msg.style.maxWidth = "85%";
-            msg.style.wordWrap = "break-word";
-            msg.style.whiteSpace = "pre-wrap";
-            chatBody.appendChild(msg);
-            chatBody.scrollTop = chatBody.scrollHeight;
-        }
-
-        function showTyping() {
-            const typing = document.createElement("div");
-            typing.id = "typing-indicator";
-            typing.className = "typing-indicator";
-            typing.style.alignSelf = "flex-start";
-            typing.style.background = "rgba(255,255,255,0.05)";
-            typing.style.padding = "12px 16px";
-            typing.style.borderRadius = "12px";
-            typing.style.display = "flex";
-            typing.style.gap = "4px";
-            typing.innerHTML = '<span></span><span></span><span></span>';
-            chatBody.appendChild(typing);
-            chatBody.scrollTop = chatBody.scrollHeight;
-            return typing;
-        }
-
-        async function sendMessage() {
-            const text = chatInput.value.trim();
-            if (!text) return;
-
-            addMessage(text, true);
-            chatInput.value = "";
-
-            const typing = showTyping();
-
-            try {
-                const response = await fetch(CHAT_WEBHOOK, {
-                    method: 'POST',
-                    headers: { 
-                        'Content-Type': 'application/json',
-                        'x-webhook-secret': WEBHOOK_SECRET
-                    },
-                    body: JSON.stringify({ message: text, source: 'portfolio-chat' })
-                });
-
-                typing.remove();
-
-               if (response.ok) {
-                    const data = await response.json();
-                    const reply = data.response || data.output || data.message || data.text || JSON.stringify(data);
-                    addMessage(reply);
-                } 
-                
-                else {
-                    addMessage("Sorry, I couldn't get a response. Please try again.");
-                }
-            } catch (err) {
-                typing.remove();
-                addMessage("Security validation failed: Invalid characters or instructions detected.");
-                
-                console.error(err);
-            }
-        }
-
-        chatSend.onclick = sendMessage;
-        chatInput.addEventListener("keypress", (e) => { if (e.key === "Enter") sendMessage(); });
+        /* --- THEME TOGGLE --- */
+        document.getElementById('theme-toggle').addEventListener('click', () => {
+            const next = document.documentElement.dataset.theme === 'light' ? 'dark' : 'light';
+            document.documentElement.dataset.theme = next;
+            try { localStorage.setItem('theme', next); } catch (e) {}
+        });
 
         /* --- SCROLLSPY / NAV HIGHLIGHT --- */
         const navLinks = document.querySelectorAll('.sticky-nav a[href^="#"]');
