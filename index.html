@@ -675,7 +675,7 @@
                     <p class="text-gray-400 text-sm mb-6">For teams ready to deploy production automations</p>
                     <div class="mb-6">
                         <span class="text-gray-400 mr-1 text-sm">from</span><span class="text-4xl md:text-5xl font-extrabold text-orange-500">$450</span>
-                        <span class="text-gray-400 ml-2">/week</span>
+                        <span class="text-gray-400 ml-2">/ project</span>
                     </div>
                     <ul class="space-y-3 mb-8 flex-1">
                         <li class="flex items-center gap-3 text-sm text-gray-400"><i class="fa-solid fa-check text-orange-500 text-xs"></i> Scoped build: full workflow end-to-end</li>
@@ -771,6 +771,7 @@
                     </div>
                     <p class="text-gray-400 text-xs leading-relaxed max-w-xs">GoHighLevel funnels, opportunity pipelines specialist, and AI Automation Engineer building autonomous workflows with n8n, LangChain, and custom agents. Production-ready systems, not prototypes.</p>
                 </div>
+               
                 <div class="flex flex-col gap-4">
                     <h4 class="text-[10px] font-bold uppercase tracking-widest text-white">Contact</h4>
                     <a href="mailto:gdulnuan.systems@gmail.com" class="text-gray-400 hover:text-orange-500 transition text-sm">gdulnuan.systems@gmail.com</a>
@@ -781,9 +782,17 @@
                     <a href="https://www.linkedin.com/in/gil-dulnuan/" target="_blank" rel="noopener" class="text-gray-400 hover:text-orange-500 transition text-sm flex items-center gap-2"><i class="fab fa-linkedin"></i> LinkedIn Profile</a>
                 </div>
             </div>
+             
             <div class="pt-12 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-8 text-center md:text-left">
                 <p class="text-[8px] md:text-[9px] text-gray-600 tracking-[0.3em] uppercase">© 2026 Gilbert Dulnuan. Built with autonomous logic.</p>
+                 <p class="text-[8px] md:text-[9px] text-gray-600 tracking-[0.3em] uppercase">   
+                <a href="/privacy.html" target="_blank" rel="noopener noreferrer">
+                    Privacy Policy
+                    </a>
+                </p>
+               
             </div>
+            
         </div>
     </footer>
 
@@ -792,18 +801,32 @@
         /* --- SITE CONFIG (fill these in) --- */
         // Plausible analytics: put your site domain here (e.g. 'gilbertdulnuan.com') to switch tracking on.
         const PLAUSIBLE_DOMAIN = '';
+        // Google Analytics 4: paste your Measurement ID here (looks like 'G-XXXXXXXXXX') to switch it on.
+        const GA_MEASUREMENT_ID = '';
         // Optional 15-min call: create a 15-minute event type in Calendly and paste its link here.
         const CALENDLY_15MIN = ''; // e.g. 'https://calendly.com/gilbeyautomation/15min'
         const CALENDLY_30MIN = 'https://calendly.com/gilbeyautomation/30min';
 
-        /* --- ANALYTICS (privacy-friendly, no cookies; inactive until PLAUSIBLE_DOMAIN is set) --- */
+        /* --- ANALYTICS (each tool stays off until its ID/domain above is filled in) --- */
         if (PLAUSIBLE_DOMAIN) {
             const t = document.createElement('script');
             t.defer = true; t.dataset.domain = PLAUSIBLE_DOMAIN; t.src = 'https://plausible.io/js/script.js';
             document.head.appendChild(t);
         }
+        window.dataLayer = window.dataLayer || [];
+        window.gtag = function () { dataLayer.push(arguments); };
+        if (GA_MEASUREMENT_ID) {
+            const g = document.createElement('script');
+            g.async = true; g.src = 'https://www.googletagmanager.com/gtag/js?id=' + GA_MEASUREMENT_ID;
+            document.head.appendChild(g);
+            gtag('js', new Date());
+            gtag('config', GA_MEASUREMENT_ID);
+        }
         window.plausible = window.plausible || function () { (window.plausible.q = window.plausible.q || []).push(arguments); };
-        function track(name, props) { try { window.plausible(name, props ? { props } : undefined); } catch (e) {} }
+        function track(name, props) {
+            try { if (PLAUSIBLE_DOMAIN) window.plausible(name, props ? { props } : undefined); } catch (e) {}
+            try { if (GA_MEASUREMENT_ID) gtag('event', name.toLowerCase().replace(/\s+/g, '_'), props || {}); } catch (e) {}
+        }
 
         // Book-button clicks (any link to #contact) and scroll depth to the booking section
         document.querySelectorAll('a[href="#contact"]').forEach(a => a.addEventListener('click', () => track('Book Click', { label: a.textContent.trim() })));
